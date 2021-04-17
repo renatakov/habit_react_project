@@ -1,0 +1,27 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.authSection{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  // background-repeat: no-repeat;
+  // background-position-y: 100%;
+  // background: url("../../images/mobile/back-wave-bottom.png");
+  @include for-size(tablet){
+    // display: flex;
+    // flex-flow: column;
+    // justify-content: center;
+    // background-repeat: no-repeat;
+    // background-position-y: 100%;
+    // background: url("../../images/tablet/back-widewave-bottom.png");
+  }
+  @include for-size(desktop){
+    // display: flex;
+    // flex-flow: column;
+    // justify-content: center;
+    // background-repeat: no-repeat;
+    // background-position-y: 100%;
+    // background: url("../../images/desktop/bottomwaves-desk.png");
+  }
+}

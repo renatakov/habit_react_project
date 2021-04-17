@@ -1,0 +1,52 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+}
+
+section {
+  height: 100vh;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+ *,
+*::before,
+*::after {
+  box-sizing: inherit;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ a {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:active,
+button:focus {
+  outline: none;
+}
