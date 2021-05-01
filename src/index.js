@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
+
+
 import App from './App';
-import {Provider} from 'react-redux'
-import store from './redux/store'
-import Login from './components/Login'
-import Form from './components/Form'
+import { BrowserRouter } from 'react-router-dom';
+import 'modern-normalize/modern-normalize.css';
+import './styles/_shared.scss';
+import { Provider } from 'react-redux';
+import s from './redux/store';
+const { store } = s;
 
 ReactDOM.render(
-  
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>, document.getElementById('root'),
 );
