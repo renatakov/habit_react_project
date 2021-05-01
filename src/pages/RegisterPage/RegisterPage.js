@@ -1,21 +1,21 @@
 import { func } from "prop-types";
 import React, { useState } from "react";
 import {useDispatch} from 'react-redux';
-import ReactDOM from 'react-dom';
-import {useHistory} from 'react-router-dom'
+// import ReactDOM from 'react-dom';
+// import {useHistory} from 'react-router-dom'/
 import './RegisterPage.module.scss'
 // Заимпортировать операцию регистрации;
-import LoginPage from "../LoginPage/LoginPage";
+// import LoginPage from "../LoginPage/LoginPage";
 
 export default function RegisterPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  
+
   const dispatch = useDispatch();
-  
-  let history  = useHistory();
+
+  // let history  = useHistory();
 
   const onRegister = (user) => {
     console.log("registered " + user);
@@ -50,8 +50,8 @@ export default function RegisterPage() {
     };
     console.log(user);
     // dispatch(вызвать заимпортированую операцию и передать в нее юзера)
-    
-    ReactDOM.render(<Login />, document.querySelector(".App"));
+
+    // ReactDOM.render(<Login />, document.querySelector(".App"));
   };
 
   return (
@@ -96,11 +96,11 @@ export default function RegisterPage() {
           placeholder="Введите ваш номер "
         />
         </div>
-      
+
         <button className="btn-1" type="submit">Дальше</button>
       </form>
-     
-      
+
+
     </div>
   );
 }
