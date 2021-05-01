@@ -4,14 +4,15 @@ import {useDispatch} from 'react-redux';
 // import ReactDOM from 'react-dom';
 // import {useHistory} from 'react-router-dom'/
 import './RegisterPage.module.scss'
-// Заимпортировать операцию регистрации;
-// import LoginPage from "../LoginPage/LoginPage";
+import operations from '../../redux/auth/operations'
+import LoginPage from "../LoginPage/LoginPage";
 
 export default function RegisterPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [pass, setPass] = useState("")
 
   const dispatch = useDispatch();
 
@@ -34,6 +35,8 @@ export default function RegisterPage() {
         return;
       case "phone":
         setPhone(value);
+        case "pass":
+          setPass(value);
       default:
         console.warn("Проверьте пожалуйста input");
     }
@@ -42,16 +45,23 @@ export default function RegisterPage() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
     const user = {
       firstName,
       lastName,
-      phone,
+      phoneNumber: phone,
+      password: pass,
+      height: 0,
+      weight: 0,
+      birthday: new Date('2021, 01, 01'),
     };
     console.log(user);
-    // dispatch(вызвать заимпортированую операцию и передать в нее юзера)
+    dispatch(operations.register(user))
 
-    // ReactDOM.render(<Login />, document.querySelector(".App"));
+   setFirstName("");
+   setLastName("");
+   setPhone("");
+   setPass("");
+
   };
 
   return (
@@ -96,10 +106,22 @@ export default function RegisterPage() {
           placeholder="Введите ваш номер "
         />
         </div>
+        <div className="form-inputs">
+          <label htmlFor='pass' className="form-label">
+            Пароль*
+          </label>
+          <input
+          value={pass}
+          name="pass"
+          type="password"
+          onChange={(evt) => handleChange(evt)}
+          placeholder="Введите вашу фамилию"
+          required
+        />
+        </div>
 
         <button className="btn-1" type="submit">Дальше</button>
       </form>
-
 
     </div>
   );
