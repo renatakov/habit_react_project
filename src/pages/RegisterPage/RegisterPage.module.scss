@@ -1,0 +1,40 @@
+$url: url(../../images/leftwawe.png);
+
+.formjs {
+  background-image: $url;
+  background-position: top;
+  background-size: cover;
+  min-height: 100%;
+  height: 100vh;
+  position: absolute;
+  background-repeat: no-repeat;
+
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: none;
+}
+
+.form-input::placeholder {
+  color: purple;
+  font-size: 12px;
+}
+
+.form-label {
+  color: purple;
+}
+
+.form-inputs p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.form-1 {
+  margin-left: 1000px;
+  margin-top: 300px;
+}
+
+
+.yourhabit {
+    color: white;
+}
