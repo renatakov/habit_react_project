@@ -1,0 +1,14 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 36" width="54" height="36">
+	<title>Монтажная область 3</title>
+	<defs>
+		<image width="24" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAAgklEQVQ4T+2UsQkCURBE3/zoUgWNrcrktFF/IljDh6vg4K94dnArWIDZGIhbwA5vZmdVxjoBOzxzVxnrI2Hr2K9kUTnVyPQQKHkT9IS9iSB+QIDjtSOPRSSh4XzpSZoyUKjdDh1TyEAoJ7wCa9Nf4FNHQ9+waAE2jlcBPLU2ZueZvgBb00Tc4Hh2DgAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Монтажная область 3">
+		<g id="модалка">
+			<use id="флаг иконка" href="#img1" transform="matrix(2.25,0,0,2.25,0,0)"/>
+		</g>
+	</g>
+</svg>

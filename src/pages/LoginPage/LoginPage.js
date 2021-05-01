@@ -1,12 +1,12 @@
-import {func} from 'prop-types';
+
 import React, { useState } from "react";
-import Form from "./Form";
-import Logo from "./Logo";
+
+
 import "./LoginPage.module.scss";
 import {useDispatch} from 'react-redux';
-import waves from '../images/waves.svg';
-import logo from '../images/logo.svg';
-import flag from '../images/flag.svg';
+
+
+
 
 
 export default function LoginpPage() {
@@ -32,10 +32,10 @@ export default function LoginpPage() {
 
   return (
     <div className='loginjs'>
-      <img src={logo}/>
+  
       <form className="form-2" onSubmit={handleSubmit}>
         {submitted ? <div className="success__message">You logged in !</div> : null}
-        <img src={flag}/>
+     
        
         <input
           value={values.phone}
@@ -51,7 +51,7 @@ export default function LoginpPage() {
           Дальше
         </button>
       </form>
-      <img className="wawes" src={waves}/>
+     
     </div>
     )
 }
