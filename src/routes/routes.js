@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { v4 as uuid } from 'uuid';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
     component: lazy(() => import('../pages/AuthPage/AuthPage')),
