@@ -1,16 +1,19 @@
-// import logo from './logo.svg';
 import { routes, PrivateRoute, PublicRoute } from './routes';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { Suspense } from 'react';
-import "./App.css";
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Suspense fallback="waiting...">
+      <Suspense fallback="...">
         <Switch>
-          {routes.map(route => {
-            return <Route {...route} />;
+          {routes.map(item => {
+            return item.private ? (
+              <PrivateRoute {...item} />
+            ) : (
+              <PublicRoute restricted={item.restricted} {...item} />
+            );
           })}
         </Switch>
       </Suspense>

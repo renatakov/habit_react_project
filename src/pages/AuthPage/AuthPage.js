@@ -1,12 +1,18 @@
-import React from "react";
-import s from "./AuthPage.module.scss"
+import logo from '../../images/logo.svg'
+import '../../App.css'
+import s from './AuthPage.module.scss'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const AuthPage = () => {
-  return(
+  return (
     <section className={s.authSection}>
-      <h1>AuthPage</h1>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+      <NavLink to="/login" className={s.loginBtn}>Вход</NavLink>
+      <NavLink to="/register" className={s.registerBtn}>Создать аккаунт</NavLink>
     </section>
   )
 }
-
-export default AuthPage;
+export default AuthPage
