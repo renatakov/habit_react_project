@@ -6,7 +6,7 @@ class HabitPage extends Component {
     return (
       <section className={styles.habitPage}>
         <div class={styles.top}>
-          <form action="/developHabit">
+          <form action="/developHabit"> 
             <button class={styles.btn}>➕</button>
           </form>
           <button class={styles.camera} alt="logo" />
