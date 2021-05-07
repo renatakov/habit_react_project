@@ -1,3 +1,3 @@
-const isAuth = store => !!store.token;
+const isAuth = store => !!store.token
 
-export default { isAuth };
+export default {isAuth}
