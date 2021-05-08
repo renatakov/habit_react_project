@@ -25,9 +25,8 @@ const token = {
 
 const register = credentials => async dispatch => {
   dispatch(registerRequest());
-  console.log(credentials)
   try {
-    const response = axios.post('/auth/register', credentials);
+    const response = await axios.post('/auth/register', credentials);
     const data = response.data;
     token.set(data.token);
     dispatch(registerSuccess(data));
@@ -39,7 +38,7 @@ const register = credentials => async dispatch => {
 const login = credentials => async dispatch => {
   dispatch(loginRequest());
   try {
-    const response = axios.post('/auth/login', credentials);
+    const response = await axios.post('/auth/login', credentials);
     const data = response.data;
     token.set(data.token);
     dispatch(loginSuccess(data));
