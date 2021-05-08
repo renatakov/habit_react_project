@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import {useDispatch} from 'react-redux';
 import ReactDOM from 'react-dom';
 import {useHistory} from 'react-router-dom'
-import './RegisterPage.module.scss'
+import styles from  './RegisterPage.module.scss'
 import operations from '../../redux/auth/operations'
 import LoginPage from "../LoginPage/LoginPage";
 
@@ -66,10 +66,10 @@ export default function RegisterPage() {
 
   return (
     <div className='formjs'>
-      <h1 className="yourhabit" style={{fontSize: 50, fontWeight: 1}}>Добивайтесь <br></br>поставленных целей<br></br>с помощью "YourHabit"</h1>
-      <form className="form-1" onSubmit={(evt) => handleSubmit(evt)}>
+      <div className={styles.yourhabit}></div>
+      <form className={styles.form1} onSubmit={(evt) => handleSubmit(evt)}>
         <div className="form-inputs">
-        <label htmlFor='username' className='form-label'>
+        <label htmlFor='username' className={styles.formlabel}>
           Имя*
         </label>
         <input
@@ -82,7 +82,7 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='lastname' className="form-label">
+          <label htmlFor='lastname' className={styles.formlabel}>
             Фамилия*
           </label>
           <input
@@ -95,7 +95,7 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='phone' className='form-label'>
+          <label htmlFor='phone' className={styles.formlabel}>
             Номер Телефона*
           </label>
            <input
@@ -107,7 +107,7 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='pass' className="form-label">
+          <label htmlFor='pass' className={styles.formlabel}>
             Пароль*
           </label>
           <input
@@ -120,7 +120,7 @@ export default function RegisterPage() {
         />
         </div>
       
-        <button className="btn-1" type="submit">Дальше</button>
+        <button className={styles.btn1} type="submit">Дальше</button>
       </form>
      
       

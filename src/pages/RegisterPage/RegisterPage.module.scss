@@ -1,40 +1,41 @@
-$url: url("../../images/desktop/leftwave.png");
-
-.formjs {
-  background-image: $url;
-  background-position: top;
-  background-size: cover;
-  min-height: 100%;
-  height: 100vh;
-  position: absolute;
-  background-repeat: no-repeat;
-
-  border-radius: 2px;
-  height: 40px;
-  width: 100%;
-  border: none;
-}
-
-.form-input::placeholder {
-  color: purple;
-  font-size: 12px;
-}
-
-.form-label {
-  color: purple;
-}
-
-.form-inputs p {
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.form-1 {
-  margin-left: 1000px;
-  margin-top: 300px;
-}
-
+@import '../../styles/mixins';
 
 .yourhabit {
-    color: white;
+  padding-top: 900px;
+  background-image: url('../../images/desktop/leftwave.png');
+  background-position: left;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  @include for-size(tablet) {
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  @include for-size(mobile) {
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+}
+
+.form1 {
+  position: absolute;
+  margin-left: 1000px;
+  bottom: 0;
+}
+
+.formlabel {
+  color: purple;
+}
+
+.btn1 {
+  display: inline-block;
+  color: purple;
+  text-decoration: none;
+  padding: 0.5em 2em;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: grey;
+  border-radius: 6px;
+  background: linear-gradient(grey, grey) grey;
+  transition: 0.2s;
 }

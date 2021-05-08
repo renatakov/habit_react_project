@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from '../../images/logo.svg'
 import styles from  "./LoginPage.module.scss";
 import {useDispatch} from 'react-redux';
 import operations from '../../redux/auth/operations'
@@ -27,9 +28,14 @@ export default function LoginPage() {
 
   return (
     <div className='loginjs'>
-  
+    <div className="header">
+    <img src={logo} className="logo1" alt="logo"/>
+    </div>
       <form className="form-2" onSubmit={handleSubmit}>
-        {submitted ? <div className="success__message">You logged in !</div> : null}  
+        {submitted ? <div className="success__message">You logged in !</div> : null}
+        <div className="form-inputs2">
+          <label htmlFor='phone' className="form-label2">Номер Телефона*</label>
+          </div>          
         <input
           value={phone}
           type="tel"
@@ -38,6 +44,9 @@ export default function LoginPage() {
           onChange={handlePhone}
           required
         />
+        <div className="form-inputs2">
+          <label htmlFor='password' className="form-label2">Пароль*</label>
+        </div>
         <input value={pass} type="password" name="pass" onChange={handlePass} required/>
         
         {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
@@ -45,7 +54,8 @@ export default function LoginPage() {
           Дальше
         </button>
       </form>
-     
+      <div className={styles.footer}></div>
+    
     </div>
     )
 }

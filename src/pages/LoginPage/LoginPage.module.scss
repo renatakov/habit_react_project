@@ -1,0 +1,30 @@
+@import '../../styles/mixins';
+
+.logo {
+  padding-top: 900px;
+  margin-left: 100px;
+  background-image: url(../../images/logo.svg);
+  background-position: top;
+  @include for-size(tablet) {
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  @include for-size(mobile) {
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+}
+
+.footer{
+ background: url(../../images/mobile/bottom-lines.png);;
+ background-position: bottom;
+ @include for-size(tablet) {
+   background: url(../../images/tablet/bottom-lines.png);
+   background-repeat: no-repeat;
+   background-position: bottom;
+ }
+ @include for-size(desktop) {
+   
+ }
+
+}
