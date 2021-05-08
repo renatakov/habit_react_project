@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import styles from './HabitsPage.module.scss';
 
 class HabitPage extends Component {
+  createHabit = () => {};
   render() {
     return (
       <section className={styles.habitPage}>
         <div class={styles.top}>
-          <form action="/developHabit"> 
-            <button class={styles.btn}>➕</button>
-          </form>
+          <button onClick={this.createHabit} class={styles.btn}>&#43;</button>
+
           <button class={styles.camera} alt="logo" />
         </div>
         <h1 class={styles.text}>Привычки</h1>
