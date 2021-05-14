@@ -12,6 +12,10 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  @include for-size(desktop) {
+    background: url(../../images/desktop/topwaves-desk.png);
+    background-repeat: no-repeat;
+  }
 }
 
 .habitPage {
@@ -33,35 +37,45 @@
   }
 }
 .top .btn {
-  margin-left: 220px;
+  margin-left: 250px;
   background-color: Transparent;
   background-repeat: no-repeat;
   color: aliceblue;
   border: none;
   cursor: pointer;
   overflow: hidden;
-  // margin-top:-500px ;
+  position: absolute;
+
+  //   @include for-size(tablet) {
+  // position: relative;
+  //   }
+  //   @include for-size(desktop) {
+
+  //     background-repeat: no-repeat;
+  //     background-position-y: 100%;
+  //     background-position: center;
+  //   }
 }
 .camera {
-  background-image: url(../../images/camera.png) ;
+  background-image: url(../../images/camera.png);
   width: 50px;
   height: 50px;
-  margin-right: 210px;
+  margin-right: 310px;
   border: none;
   background-color: Transparent;
   background-repeat: no-repeat;
-  margin-top: -30px;
+  margin-top: -20px;
 }
-.text{
-  color:purple;
+.text {
+  color: purple;
   margin-right: 165px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 250%;
 }
-.calendar{
+.calendar {
   margin-right: -160px;
   margin-top: -20px;
 }
-.habitItem{
+.habitItem {
   border: 1px solid black;
 }

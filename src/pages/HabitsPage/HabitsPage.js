@@ -28,7 +28,7 @@ class HabitPage extends Component {
       <section className={styles.habitPage}>
         <div class={styles.top}>
           <button onClick={this.showModal} class={styles.btn}>
-            &#43;
+          &#43;
           </button>
           {this.state.showModal && (
             <Modal toggleModal={this.showModal}>
