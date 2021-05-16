@@ -1,4 +1,4 @@
-import { func } from "prop-types";
+// import { func } from "prop-types";
 import React, { useState } from "react";
 import {useDispatch} from 'react-redux';
 import ReactDOM from 'react-dom';
