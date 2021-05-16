@@ -40,7 +40,7 @@ export default [
     path: '/habits',
     exact: true,
     key: uuid(),
-    private: true,
+    private: false,
     restricted: false,
   },
   {
