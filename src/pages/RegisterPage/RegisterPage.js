@@ -65,11 +65,13 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className='formjs'>
-      <div className={styles.yourhabit}></div>
+    <div className={styles.formjs}>
+      <div className={styles.header}>
+        <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
+      </div>
       <form className={styles.form1} onSubmit={(evt) => handleSubmit(evt)}>
         <div className="form-inputs">
-        <label htmlFor='username' className={styles.formlabel}>
+        <label htmlFor='username' className={styles.formlabel1}>
           Имя*
         </label>
         <input
@@ -82,10 +84,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='lastname' className={styles.formlabel}>
+          <label htmlFor='lastname' className={styles.formlabel2}>
             Фамилия*
           </label>
-          <input
+          <input className={styles.input1}
           value={lastName}
           name="lastname"
           type="text"
@@ -95,10 +97,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='phone' className={styles.formlabel}>
+          <label htmlFor='phone' className={styles.formlabel3}>
             Номер Телефона*
           </label>
-           <input
+           <input className={styles.input1}
           value={phone}
           name="phone"
           type="text"
@@ -107,10 +109,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='pass' className={styles.formlabel}>
+          <label htmlFor='pass' className={styles.formlabel4}>
             Пароль*
           </label>
-          <input
+          <input className={styles.input1}
           value={pass}
           name="pass"
           type="password"
@@ -122,6 +124,7 @@ export default function RegisterPage() {
       
         <button className={styles.btn1} type="submit">Дальше</button>
       </form>
+     <div className={styles.footer1}></div>
      
       
     </div>
