@@ -4,7 +4,6 @@
 .authSection {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   background: url('../../images/mobile/back-wave-bottom.png');
   background-repeat: no-repeat;
   background-position-y: 100%;
@@ -31,4 +30,8 @@
 }
 .loginBtn {
   margin-bottom: 30px;
+}
+
+.header {
+  margin-top: 70px;
 }

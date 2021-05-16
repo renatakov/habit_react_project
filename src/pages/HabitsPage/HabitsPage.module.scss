@@ -45,4 +45,28 @@
   cursor: pointer;
   overflow: hidden;
   position: absolute;
-
+}
+.camera {
+  background-image: url(../../images/camera.png);
+  width: 50px;
+  height: 50px;
+  margin-right: 310px;
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  margin-top: -20px;
+}
+.text {
+  color: purple;
+  margin-right: 165px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 250%;
+}
+.calendar {
+  margin-right: -160px;
+  margin-top: -20px;
+}
+.habitItem {
+  border: 1px solid black;
+  // border-radius: 1px solid black;
+}
