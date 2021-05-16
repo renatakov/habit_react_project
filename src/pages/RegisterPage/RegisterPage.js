@@ -1,9 +1,11 @@
 import { func } from "prop-types";
 import React, { useState } from "react";
 import {useDispatch} from 'react-redux';
-// import ReactDOM from 'react-dom';
-// import {useHistory} from 'react-router-dom'/
-import './RegisterPage.module.scss'
+
+import ReactDOM from 'react-dom';
+import {useHistory} from 'react-router-dom'
+import styles from  './RegisterPage.module.scss'
+
 import operations from '../../redux/auth/operations'
 import LoginPage from "../LoginPage/LoginPage";
 
@@ -65,11 +67,13 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className='formjs'>
-      <h1 className="yourhabit" style={{fontSize: 50, fontWeight: 1}}>Добивайтесь <br></br>поставленных целей<br></br>с помощью "YourHabit"</h1>
-      <form className="form-1" onSubmit={(evt) => handleSubmit(evt)}>
+    <div className={styles.formjs}>
+      <div className={styles.header}>
+        <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
+      </div>
+      <form className={styles.form1} onSubmit={(evt) => handleSubmit(evt)}>
         <div className="form-inputs">
-        <label htmlFor='username' className='form-label'>
+        <label htmlFor='username' className={styles.formlabel1}>
           Имя*
         </label>
         <input
@@ -82,10 +86,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='lastname' className="form-label">
+          <label htmlFor='lastname' className={styles.formlabel2}>
             Фамилия*
           </label>
-          <input
+          <input className={styles.input1}
           value={lastName}
           name="lastname"
           type="text"
@@ -95,10 +99,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='phone' className='form-label'>
+          <label htmlFor='phone' className={styles.formlabel3}>
             Номер Телефона*
           </label>
-           <input
+           <input className={styles.input1}
           value={phone}
           name="phone"
           type="text"
@@ -107,10 +111,10 @@ export default function RegisterPage() {
         />
         </div>
         <div className="form-inputs">
-          <label htmlFor='pass' className="form-label">
+          <label htmlFor='pass' className={styles.formlabel4}>
             Пароль*
           </label>
-          <input
+          <input className={styles.input1}
           value={pass}
           name="pass"
           type="password"
@@ -120,8 +124,17 @@ export default function RegisterPage() {
         />
         </div>
 
+      
+        <button className={styles.btn1} type="submit">Дальше</button>
+      </form>
+     <div className={styles.footer1}></div>
+     
+      
+
+
         <button className="btn-1" type="submit">Дальше</button>
       </form>
+
 
     </div>
   );

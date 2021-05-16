@@ -1,0 +1,74 @@
+@import '../../styles/mixins';
+
+.logo {
+  padding-top: 900px;
+  margin-left: 100px;
+  background: url(../../images/logo.svg);
+  background-position: top;
+  @include for-size(tablet) {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: url(../../images/logo.svg);
+  }
+  @include for-size(mobile) {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: url(../../images/logo.svg);
+  }
+}
+
+.footer {
+  background-image: url(../../images/mobile/bottom-lines.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @include for-size(tablet) {
+    background-image: url(../../images/tablet/bottom-lines.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  @include for-size(desktop) {
+    background-image: url(../../images/tablet/bottom-lines.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+}
+
+.btn2 {
+  width: 188px;
+  height: 37px;
+  background-color: rgba(234, 231, 242, 0.5019607843137255);
+  border: 1px solid #390e84;
+}
+
+.forminputs2 {
+  color: purple;
+}
+
+.formlabel1 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #3a1085;
+  font-weight: bold;
+  font-family: 'Candara';
+}
+
+.formlabel2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #390e84;
+  font-weight: bold;
+  font-family: 'Candara';
+}
+
+.btnGetback2 {
+  margin-left: 36px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
