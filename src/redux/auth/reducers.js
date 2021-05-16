@@ -1,4 +1,4 @@
-import { combineReducers, createReducer } from '@reduxjs/toolkit';
+import { combineReducers, createReducer } from "@reduxjs/toolkit";
 import {
   registerSuccess,
   loginSuccess,
@@ -6,12 +6,16 @@ import {
   registerError,
   loginError,
   logoutError,
-} from './actions';
+} from "./actions";
 
 const initState = {
-  name: null,
-  email: null,
-  password: null,
+  phoneNumber: "",
+  password: "",
+  firstName: "",
+  lastName: "",
+  height: 0,
+  weight: 0,
+  birthday: "",
 };
 
 const userReducer = createReducer(initState, {
@@ -22,7 +26,7 @@ const userReducer = createReducer(initState, {
 
 const tokenReducer = createReducer(null, {
   [registerSuccess]: (_, { payload }) => payload.token,
-  [logoutSuccess]: (_, { payload }) => payload.token,
+  [loginSuccess]: (_, { payload }) => payload.token,
   [logoutSuccess]: () => null,
 });
 
@@ -37,4 +41,3 @@ export default combineReducers({
   token: tokenReducer,
   error: errorReducer,
 });
-

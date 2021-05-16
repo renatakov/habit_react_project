@@ -1,9 +1,11 @@
 import { func } from "prop-types";
 import React, { useState } from "react";
 import {useDispatch} from 'react-redux';
+
 import ReactDOM from 'react-dom';
 import {useHistory} from 'react-router-dom'
 import styles from  './RegisterPage.module.scss'
+
 import operations from '../../redux/auth/operations'
 import LoginPage from "../LoginPage/LoginPage";
 
@@ -13,10 +15,10 @@ export default function RegisterPage() {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [pass, setPass] = useState("")
-  
+
   const dispatch = useDispatch();
-  
-  let history  = useHistory();
+
+  // let history  = useHistory();
 
   const onRegister = (user) => {
     console.log("registered " + user);
@@ -121,12 +123,19 @@ export default function RegisterPage() {
           required
         />
         </div>
+
       
         <button className={styles.btn1} type="submit">Дальше</button>
       </form>
      <div className={styles.footer1}></div>
      
       
+
+
+        <button className="btn-1" type="submit">Дальше</button>
+      </form>
+
+
     </div>
   );
 }

@@ -18,9 +18,9 @@ export default function LoginPage() {
     setPass(event.target.value);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
-    
+
     setSubmitted(true);
     dispatch(operations.login(phone))
     setPhone("");
@@ -28,6 +28,7 @@ export default function LoginPage() {
 
   return (
     <div className='loginjs'>
+
       <button className={styles.btnGetback2}>&#8592; Войти</button>
     <div className="header">
       
@@ -38,11 +39,15 @@ export default function LoginPage() {
         <div className={styles.forminputs2}>
           <label htmlFor='phone' className={styles.formlabel1}>Номер Телефона*</label>
           </div>          
+
+
+      <form className="form-2" onSubmit={handleSubmit}>
+        {submitted ? <div className="success__message">You logged in !</div> : null}
+
         <input
           value={phone}
           type="tel"
           name="phone"
-          
           onChange={handlePhone}
           required
         />
@@ -50,15 +55,16 @@ export default function LoginPage() {
           <label htmlFor='password' className={styles.formlabel2}>Пароль*</label>
         </div>
         <input value={pass} type="password" name="pass" onChange={handlePass} required/>
-        
+
         {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
         <button className={styles.btn2} type="submit">
           Дальше
         </button>
       </form>
+
       <div className={styles.footer}></div>
      
-    
+   
     </div>
-    )
+  );
 }
