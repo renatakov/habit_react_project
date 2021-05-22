@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 const AuthPage = () => {
   return (
     <section className={s.authSection}>
-      <header className="App-header">
+      <header className={s.header}>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <NavLink to="/login" className={s.loginBtn}>Вход</NavLink>

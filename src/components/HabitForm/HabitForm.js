@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
-import classes from "./Form.module.css";
+import classes from "./HabitForm.module.scss";
 import PropTypes from "prop-types";
 import { HexColorPicker } from "react-colorful";
 // import { Button } from 'react-native'
