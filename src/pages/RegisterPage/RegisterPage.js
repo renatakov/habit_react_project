@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import { func } from 'prop-types';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-// import ReactDOM from 'react-dom';
-// import {useHistory} from 'react-router-dom'/
-import './RegisterPage.module.scss';
-import operations from '../../redux/auth/operations';
-import LoginPage from '../LoginPage/LoginPage';
-
-=======
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ReactDOM from 'react-dom';
@@ -16,30 +5,20 @@ import { useHistory } from 'react-router-dom';
 import styles from './RegisterPage.module.scss';
 import operations from '../../redux/auth/operations';
 import LoginPage from '../LoginPage/LoginPage';
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
+
 export default function RegisterPage() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [pass, setPass] = useState('');
-<<<<<<< HEAD
 
-  const dispatch = useDispatch();
-
-  // let history  = useHistory();
-
-  const onRegister = user => {
-    console.log('registered ' + user);
-  };
-
-=======
   const dispatch = useDispatch();
   let history = useHistory();
   const onRegister = user => {
     console.log('registered ' + user);
   };
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
+
   const handleChange = event => {
     const { value, name } = event.target;
     console.log(event.target.value);
@@ -51,25 +30,17 @@ export default function RegisterPage() {
         setLastName(value);
         return;
       case 'phone':
-        setPhone(value);
-<<<<<<< HEAD
         return;
       case 'pass':
         setPass(value);
         return;
-=======
-      case 'pass':
-        setPass(value);
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
+
       default:
         console.warn('Проверьте пожалуйста input');
     }
     console.log(submitted);
   };
-<<<<<<< HEAD
 
-=======
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
   const handleSubmit = evt => {
     evt.preventDefault();
     const user = {
@@ -83,36 +54,25 @@ export default function RegisterPage() {
     };
     console.log(user);
     dispatch(operations.register(user));
-<<<<<<< HEAD
 
-=======
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
     setFirstName('');
     setLastName('');
     setPhone('');
     setPass('');
   };
   return (
-<<<<<<< HEAD
-    <div className="formjs">
-      <h1 className="yourhabit" style={{ fontSize: 50, fontWeight: 1 }}>
-        Добивайтесь <br></br>поставленных целей<br></br>с помощью "YourHabit"
-      </h1>
-      <form className="form-1" onSubmit={evt => handleSubmit(evt)}>
-        <div className="form-inputs">
-          <label htmlFor="username" className="form-label">
-=======
+
     <div className={styles.formjs}>
       <div className={styles.header}>
         <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
       </div>
       <form className={styles.form1} onSubmit={evt => handleSubmit(evt)}>
         <div className="form-inputs">
-          <label htmlFor="username" className={styles.formlabel1}>
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
+
+          <label htmlFor="username" className={styles.formLabel1}>
             Имя*
-          </label>
-          <input
+          </label >
+          <input className={styles.formInput1}
             value={firstName}
             name="firstname"
             type="text"
@@ -122,18 +82,19 @@ export default function RegisterPage() {
           />
         </div>
         <div className="form-inputs">
-<<<<<<< HEAD
-          <label htmlFor="lastname" className="form-label">
+
+          <label htmlFor="lastname" className={styles.formLabel1}>
             Фамилия*
           </label>
           <input
-=======
+            className={styles.formInput1}
+
           <label htmlFor="lastname" className={styles.formlabel2}>
             Фамилия*
           </label>
           <input
             className={styles.input1}
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
+
             value={lastName}
             name="lastname"
             type="text"
@@ -143,18 +104,16 @@ export default function RegisterPage() {
           />
         </div>
         <div className="form-inputs">
-<<<<<<< HEAD
-          <label htmlFor="phone" className="form-label">
+          <label htmlFor="phone" className={styles.formLabel1}>
             Номер Телефона*
           </label>
           <input
-=======
+            className={styles.formInput1}
           <label htmlFor="phone" className={styles.formlabel3}>
             Номер Телефона*
           </label>
           <input
             className={styles.input1}
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
             value={phone}
             name="phone"
             type="text"
@@ -163,18 +122,17 @@ export default function RegisterPage() {
           />
         </div>
         <div className="form-inputs">
-<<<<<<< HEAD
-          <label htmlFor="pass" className="form-label">
+
+          <label htmlFor="pass" className={styles.formLabel1}>
             Пароль*
           </label>
           <input
-=======
+            className={styles.formInput1}
           <label htmlFor="pass" className={styles.formlabel4}>
             Пароль*
           </label>
           <input
             className={styles.input1}
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
             value={pass}
             name="pass"
             type="password"
@@ -183,19 +141,11 @@ export default function RegisterPage() {
             required
           />
         </div>
-<<<<<<< HEAD
-
-        <button className="btn-1" type="submit">
-          Дальше
-        </button>
-      </form>
-=======
         <button className={styles.btn1} type="submit">
           Дальше
         </button>
       </form>
       <div className={styles.footer1}></div>
->>>>>>> b78b72d1aebd9bd4abe9ec3e8cbcee6b5753fb41
     </div>
   );
 }
