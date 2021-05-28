@@ -1,0 +1,383 @@
+.userFormHeader {
+  width: 100%;
+  height: 154px;
+  background-image: url(../../images/mobile/back-wave-top.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goBack {
+  font-family: "Candara";
+  font-weight: 700;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  top: 90px;
+  left: 80px;
+}
+
+.goBackArrow {
+  margin-right: 20px;
+  font-size: 55px;
+}
+
+.userPhoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../images/camera.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 5px;
+}
+
+#photoUpload {
+  width: 63px;
+  height: 63px;
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadInput {
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.avatarImage {
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  padding: 5px;
+  width: 64px;
+  height: 64px;
+}
+
+.headerPhotoText {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: "Candara";
+}
+
+.inputsData {
+  margin-bottom: 38px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dataGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.formInputs {
+  border: 0px;
+  border-bottom: 1px solid #c4c4c4;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #c4c4c4;
+}
+
+.formInputsText {
+  font-family: "Candara";
+  font-weight: 700;
+  font-size: 20px;
+  color: #390e84;
+}
+
+#birthInput {
+  width: 135px;
+}
+
+#birthInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.formInputs::-webkit-inner-spin-button,
+.formInputs::-webkit-outer-spin-button {
+  display: none;
+}
+
+.formInputs::placeholder,
+#birthInput {
+  color: #c4c4c4;
+  text-align: center;
+}
+
+.createBtn {
+  width: 150px;
+  height: 33px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid #390e84;
+  cursor: pointer;
+  margin: 0 auto;
+  font-family: "Candara";
+  font-weight: 700;
+  font-size: 20px;
+  color: #390e84;
+}
+
+.footer {
+  background-image: url(../../images/mobile/bottom-lines.png);
+  width: 100%;
+  height: 69px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 375px) {
+  .userFormHeader {
+    height: 200px
+  }
+
+  .footer {
+    height: 90px;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+   .userFormHeader {
+    height: 240px;
+  }
+
+  #avatarimage {
+    width: 56px;
+    height: 56px;
+  }
+
+   .headerPhotoText {
+    font-size: 20px;
+  }
+
+   form {
+    height: 420px;
+    justify-content: space-between;
+  }
+
+   .inputsData {
+    height: 300px;
+    margin: 60px;
+  }
+
+   .footer {
+    height: 110px;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+   .userFormHeader {
+    height: 240px;
+    background-image: url(../../images/tablet/back-widewave-top.png);
+  }
+
+  .userPhoto {
+    margin-bottom: 65px;
+  }
+
+  .avatarImage {
+    width: 90px;
+    height: 90px;
+  }
+
+   form {
+    height: 580px;
+  }
+
+  .inputsData {
+    height: 460px;
+    margin-bottom: 80px;
+  }
+
+  .dataGroup {
+    height: 120px;
+  }
+
+  .headerPhotoText,
+  .formInputs::placeholder,
+  .formInputsText,
+  #birthInput,
+  .formInputs {
+    font-size: 25px;
+  }
+
+   .formInputs {
+    height: 60px;
+    width: 170px;
+  }
+
+  #birthInput {
+    width: 205px;
+  }
+
+  .createBtn {
+    width: 262px;
+    height: 50px;
+    border-radius: 0px;
+    padding: 3px 0px 0px 10px;
+    font-size: 30px;
+  }
+
+  .footer {
+    height: 150px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .userFormHeader {
+    height: 270px;
+    background-image: url(../../images/tablet/back-widewave-top.png);
+  }
+
+  .userPhoto {
+    padding-bottom: 0px;
+    background-size: 40%;
+    background-position: center;
+    padding-top: 15px;
+  }
+
+  .avatarImage {
+    padding: 16px;
+    width: 115px;
+    height: 115px;
+  }
+
+  .inputsData {
+    height: 460px;
+    margin-bottom: 80px;
+  }
+
+  .dataGroup {
+    height: 120px;
+  }
+
+  .headerPhotoText,
+  .formInputs::placeholder,
+  .formInputsText,
+  #birthInput {
+    font-size: 30px;
+  }
+
+  .formInputs {
+    height: 60px;
+    width: 170px;
+  }
+
+  #birthInput {
+    width: 205px;
+  }
+
+  .createBtn {
+    width: 262px;
+    height: 50px;
+    border-radius: 0px;
+    padding: 3px 0px 0px 80px;
+    font-size: 30px;
+    padding: 0px;
+  }
+
+  .footer {
+    background-image: url(../../images/tablet/bottom-lines.png);
+    width: 100%;
+    height: 180px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .userFormHeader {
+    background-image: url(../../images/desktop/topwaves-desk.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 440px;
+    justify-content: start;
+  }
+
+  .goBack {
+    display: flex;
+  }
+
+  .userPhoto {
+    padding-top: 35px;
+  }
+
+  .avatarImage {
+    width: 160px;
+    height: 160px;
+    padding: 15px;
+  }
+
+  .inputsData {
+    margin-bottom: 127px;
+    height: 545px;
+  }
+
+  .dataGroup {
+    height: 160px;
+  }
+
+  .formInputs,
+  #birthInput {
+    font-size: 40px;
+    width: 663px;
+    border-bottom: 3px solid #c4c4c4;
+  }
+
+  .headerPhotoText,
+  .formInputs::placeholder,
+  #birthInput {
+    font-size: 40px;
+  }
+
+  .formInputsText {
+    font-size: 45px;
+  }
+
+  .createBtn {
+    font-size: 45px;
+    width: 364px;
+    height: 70px;
+    margin-bottom: 74px;
+  }
+
+  .footer {
+    background-image: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .userFormHeader {
+    height: 545px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .userPhoto {
+    margin-bottom: 190px;
+  }
+}
