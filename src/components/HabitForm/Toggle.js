@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import classes from "./Form.module.css";
+import React, { Component } from "react";
 
 class Toggle extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Toggle extends Component {
   }
 
   handleClick() {
-    this.setState(state => ({
+    this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
     }));
   }
@@ -17,9 +18,9 @@ class Toggle extends Component {
   render() {
     return (
       <>
-        <h6>Напомнить</h6>
-        <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'Включено' : 'Выключено'}
+        <label className={classes.remind}>Напомнить мне</label>
+        <button className={classes.on} onClick={this.handleClick}>
+          {this.state.isToggleOn ? "Включено" : "Выключено"}
         </button>
       </>
     );

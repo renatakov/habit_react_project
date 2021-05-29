@@ -6,6 +6,9 @@ import { HexColorPicker } from "react-colorful";
 // import { Button } from 'react-native'
 import Toggle from "./Toggle";
 // import FlipToggle from "./Color";
+import line from "../../images/mobile/modal-habit-bottom.png";
+// import line1 from "../../images/line1.png";
+// import line2 from "../../images/line2.png";
 
 class Form extends Component {
   state = {
@@ -50,30 +53,34 @@ class Form extends Component {
     const { name, habit } = this.state;
     return (
       <>
-        <h1>Новая Привычка</h1>
-        <form onSubmit={this.handleSubmit} className={classes.form}>
-          <label htmlFor="nameInput" className={classes.label}>
-            Название
-            <input
-              type="text"
-              name="name"
-              value={name}
-              placeholder="Зарядка"
-              onChange={this.handleChange}
-              id="nameInput"
-            />
-          </label>
+        <div className={classes.form}>
+          <h1 className={classes.label}>Новая Привычка</h1>
+          <h4 className={classes.name}>Название</h4>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            placeholder="Зарядка"
+            onChange={this.handleChange}
+            id="nameInput"
+            className={classes.input}
+          />
+        </div>
 
-          <label htmlFor="textInput" className={classes.label}>
+        <form onSubmit={this.handleSubmit} className={classes}>
+          <label htmlFor="textInput" className={classes.motiv}>
             Мотивируй себя
-            <input
-              type="motiv"
-              name="motivation"
-              onChange={this.handleChange}
-              id="numberInput"
-            />
           </label>
-          <label htmlFor="button" className={classes.label}>
+          <input
+            type="motiv"
+            name="motivation"
+            onChange={this.handleChange}
+            id="numberInput"
+            placeholder="..."
+            className={classes.input1}
+          />
+
+          <label htmlFor="button" className={classes.label1}>
             Повторять
             {/* <input
               type="button"
@@ -82,7 +89,7 @@ class Form extends Component {
               onChange={this.handleChange}
               id="buttonInput"
             /> */}
-            <select>
+            <select className={classes.option}>
               <option value="day">Каждый день</option>
               <option value="week">Каждую неделю</option>
               <option selected value="month">
@@ -90,12 +97,26 @@ class Form extends Component {
               </option>
             </select>
           </label>
-          <label htmlFor="numberInput" className={classes.label}>
+          <label htmlFor="numberInput" className={classes.repeat}>
             Выбери цвет
-            <select>
-              <option type="color" value="blue"></option>
-              <option type="color" value="cyan"></option>
-              <option type="color" value="red"></option>
+            <select className={classes.colorOpt}>
+              <option
+                type="submit"
+                value="cyan"
+                className={classes.color1}
+              ></option>
+              <option
+                className={classes.color2}
+                type="submit"
+                value="blue"
+                url=""
+              ></option>
+              <option
+                className={classes.color3}
+                type="submit"
+                value="red"
+                url=""
+              ></option>
             </select>
           </label>
 
@@ -103,15 +124,18 @@ class Form extends Component {
             <form action=""></form>
           </Toggle>
 
-            {/* <FlipToggle /> */}
+          {/* <FlipToggle /> */}
 
           <button
+            className={classes.save}
             type="submit"
-            className={classes.button}
             disabled={!name.length || !habit.length}
           >
             Сохранить
           </button>
+          <img src={line} alt={"line"} className={classes.line} />
+          {/* <img src={line1} alt={"line1"} className={classes.line1} />
+          <img src={line2} alt={"line2"} className={classes.line2} /> */}
         </form>
       </>
     );
