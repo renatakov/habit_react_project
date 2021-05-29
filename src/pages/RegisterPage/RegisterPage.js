@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styles from './RegisterPage.module.scss';
 import operations from '../../redux/auth/operations';
 import LoginPage from '../LoginPage/LoginPage';
@@ -58,7 +58,10 @@ export default function RegisterPage() {
   return (
     <div className={styles.formjs}>
       <div className={styles.header}>
+        <NavLink to="/">
         <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
+        </NavLink>
+        
       </div>
       <form className={styles.form1} onSubmit={evt => handleSubmit(evt)}>
         <div className="form-inputs">

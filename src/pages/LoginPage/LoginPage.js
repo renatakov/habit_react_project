@@ -3,6 +3,7 @@ import logo from '../../images/logo.svg';
 import styles from './LoginPage.module.scss';
 import { useDispatch } from 'react-redux';
 import operations from '../../redux/auth/operations';
+import { NavLink } from 'react-router-dom';
 export default function LoginPage() {
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -22,7 +23,10 @@ export default function LoginPage() {
   };
   return (
     <div className={styles.loginjs}>
+      <NavLink to="/">
       <button className={styles.btnGetback2}>&#8592; Войти</button>
+      </NavLink>
+      
 
       <div className={styles.header}>
         <img src={logo} className="logo1" alt="logo" />

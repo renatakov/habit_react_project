@@ -60,7 +60,7 @@
     }
   }
   .header {
-    display: none;
+    // display: none;
     @include for-size(tablet) {
       display: block;
     }
