@@ -32,7 +32,7 @@ export default [
     path: '/user',
     exact: true,
     key: uuid(),
-    private: true,
+    private: false,
     restricted: false,
   },
   {
