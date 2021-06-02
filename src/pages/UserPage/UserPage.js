@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import styles from './UserPage.module.scss';
 import { NavLink } from 'react-router-dom';
 
-let AvatarImage = {
-  backgroundImage: '',
-};
-
 class UserPage extends Component {
   state = {
     photo: '',
@@ -20,13 +16,27 @@ class UserPage extends Component {
     localStorage.setItem([name], value);
   };
 
-  getFile = ({ target }) => {
-    let filename = target.files[0].name;
-    this.setState({ photo: filename });
-    console.log(filename);
-    AvatarImage = {
-      backgroundImage: '/' + filename,
+  uploadImage = e => {
+    const { files } = e.target;
+    if (files.length === 0) {
+      return;
+    }
+
+    if(files[0].size > 2200000){
+      alert("Файл слишком большой!");
+      return;
+   };
+
+    const file = files[0];
+    const fileReader = new FileReader();
+    let avatarImage = document.getElementById(styles.avatarImage);
+
+    fileReader.onload = () => {
+      avatarImage.style.backgroundImage = `url(${fileReader.result})`;
+      this.setState({ photo: fileReader.result });
+      localStorage.setItem('photo', fileReader.result);
     };
+    fileReader.readAsDataURL(file);
   };
 
   componentDidMount() {
@@ -36,9 +46,33 @@ class UserPage extends Component {
       growth: localStorage.getItem('growth'),
       birthDate: localStorage.getItem('birthDate'),
     });
+
+    let inputs = document.getElementsByClassName(styles.formInputs);
+    for (let i = 0; i < inputs.length; i++) {
+      inputs.item(i).value = localStorage.getItem([inputs.item(i).name]);
+    }
+  }
+
+  componentDidUpdate() {
+    let avatarImage = document.getElementById(styles.avatarImage);
+    avatarImage.style.backgroundImage = `url(${this.state.photo})`;
   }
 
   render() {
+    let now = new Date(),
+      day = now.getDay(),
+      month = now.getMonth() + 1,
+      year = now.getFullYear();
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    let maxDate = `${year}-${month}-${day}`;
+
     return (
       <>
         <header className={styles.userFormHeader}>
@@ -48,16 +82,16 @@ class UserPage extends Component {
               <span>Назад</span>
             </div>
           </NavLink>
-          <div className={styles.userPhoto}>
+          <div id={styles.userPhoto}>
             <input
               id={styles.photoUpload}
               className={styles.uploadInput}
               type="file"
               accept="image/*"
               name="photo"
-              onChange={this.getFile}
+              onChange={this.uploadImage}
             />
-            <div className={styles.avatarImage} style={AvatarImage}></div>
+            <div id={styles.avatarImage}></div>
             <span className={styles.headerPhotoText}>Сменить фото</span>
           </div>
         </header>
@@ -101,7 +135,10 @@ class UserPage extends Component {
                   required
                   autoComplete="off"
                   name="birthDate"
+                  min="1900-01-01"
+                  max={maxDate}
                   onChange={this.handleChange}
+                  onKeyDown={e => e.preventDefault()}
                 />
               </div>
             </div>
