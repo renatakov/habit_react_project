@@ -10,7 +10,7 @@ const AuthPage = () => {
       <header className={s.header}>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <NavLink to="/user" className={s.loginBtn}>Вход</NavLink>
+      <NavLink to="/login" className={s.loginBtn}>Вход</NavLink>
       <NavLink to="/register" className={s.registerBtn}>Создать аккаунт</NavLink>
     </section>
   )
