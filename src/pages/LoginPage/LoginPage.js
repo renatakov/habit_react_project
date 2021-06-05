@@ -26,21 +26,16 @@ export default function LoginPage() {
       <NavLink to="/">
       <button className={styles.btnGetback2}>&#8592; Войти</button>
       </NavLink>
-      
-
       <div className={styles.header}>
         <img src={logo} className="logo1" alt="logo" />
       </div>
-
       <form className={styles.form} onSubmit={handleSubmit}>
         {submitted ? (
           <div className="success__message">You logged in !</div>
         ) : null}
-
         <label htmlFor="phone" className={styles.formLabel}>
           Номер Телефона*
         </label>
-
         <input
           className={styles.formInput}
           id="phone"
@@ -50,11 +45,9 @@ export default function LoginPage() {
           onChange={handlePhone}
           required
         />
-
         <label htmlFor="password" className={styles.formLabel}>
           Пароль*
         </label>
-
         <input
           className={styles.formInput}
           id="password"
@@ -64,12 +57,11 @@ export default function LoginPage() {
           onChange={handlePass}
           required
         />
-
         {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
-
         <button className={styles.btn2} type="submit">
           Дальше
         </button>
+        <footer className="footer2"></footer>
       </form>
     </div>
   );

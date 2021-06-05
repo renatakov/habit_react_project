@@ -1,9 +1,6 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
-
 .loginjs {
-
-  
   height: 100vh;
   background: url('../../images/mobile/bottom-lines.png');
   background-repeat: no-repeat;
@@ -82,7 +79,7 @@
         font-family: 'Candara';
       }
       @include for-size(desktop) {
-        //
+      
       }
     }
     .formInput {
@@ -104,14 +101,12 @@
       display: block;
       margin: 0 auto;
       background-color: rgba(234, 231, 242, 0.5019607843137255);
-
       font-size: 20px;
       letter-spacing: 1px;
       color: #3e1687;
       font-weight: bold;
       font-family: 'Candara';
       padding: 10px 38px;
-
       border: 1px solid $blue-color;
     }
     @include for-size(tablet) {
@@ -124,7 +119,7 @@
       font-weight: bold;
       font-family: 'Candara';
       padding: 15px 41px;
-
     }
+    
   }
 }
