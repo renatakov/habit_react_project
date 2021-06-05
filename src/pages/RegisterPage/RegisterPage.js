@@ -60,6 +60,7 @@ export default function RegisterPage() {
   };
   return (
     <div className={styles.formjs}>
+
       <header className={styles.header}>
         {/* <NavLink to="/">
           <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
@@ -123,6 +124,7 @@ export default function RegisterPage() {
       </form>
 
       <footer className={styles.footer1}>
+      
         <button className={styles.btn1} type="submit">
           Дальше
         </button>

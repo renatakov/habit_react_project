@@ -4,23 +4,28 @@ import styles from './LoginPage.module.scss';
 import { useDispatch } from 'react-redux';
 import operations from '../../redux/auth/operations';
 import { NavLink } from 'react-router-dom';
+
 export default function LoginPage() {
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [pass, setPass] = useState('');
   const dispatch = useDispatch();
+
   const handlePhone = event => {
     setPhone(event.target.value);
   };
+
   const handlePass = event => {
     setPass(event.target.value);
   };
+
   const handleSubmit = event => {
     event.preventDefault();
     setSubmitted(true);
     dispatch(operations.login(phone));
     setPhone('');
   };
+
   return (
     <div className={styles.loginjs}>
       <NavLink to="/">
@@ -45,6 +50,7 @@ export default function LoginPage() {
           onChange={handlePhone}
           required
         />
+
         <label htmlFor="password" className={styles.formLabel}>
           Пароль*
         </label>
@@ -57,7 +63,9 @@ export default function LoginPage() {
           onChange={handlePass}
           required
         />
+
         {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
+
         <button className={styles.btn2} type="submit">
           Дальше
         </button>
