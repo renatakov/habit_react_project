@@ -3,6 +3,7 @@ import logo from '../../images/logo.svg';
 import styles from './LoginPage.module.scss';
 import { useDispatch } from 'react-redux';
 import operations from '../../redux/auth/operations';
+import { NavLink } from 'react-router-dom';
 
 export default function LoginPage() {
   const [phone, setPhone] = useState('');
@@ -27,17 +28,16 @@ export default function LoginPage() {
 
   return (
     <div className={styles.loginjs}>
+      <NavLink to="/">
       <button className={styles.btnGetback2}>&#8592; Войти</button>
-
+      </NavLink>
       <div className={styles.header}>
         <img src={logo} className="logo1" alt="logo" />
       </div>
-
       <form className={styles.form} onSubmit={handleSubmit}>
         {submitted ? (
           <div className="success__message">You logged in !</div>
         ) : null}
-
         <label htmlFor="phone" className={styles.formLabel}>
           Номер Телефона*
         </label>
@@ -51,21 +51,9 @@ export default function LoginPage() {
           required
         />
 
-        <input
-          value={pass}
-          type="password"
-          name="pass"
-          onChange={handlePass}
-          required
-        />
-
-        {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
-        <button className="button-1" type="submit"></button>
-
         <label htmlFor="password" className={styles.formLabel}>
           Пароль*
         </label>
-
         <input
           className={styles.formInput}
           id="password"
@@ -76,9 +64,12 @@ export default function LoginPage() {
           required
         />
 
+        {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
+
         <button className={styles.btn2} type="submit">
           Дальше
         </button>
+        <footer className="footer2"></footer>
       </form>
     </div>
   );

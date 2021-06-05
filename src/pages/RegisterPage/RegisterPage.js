@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import styles from './RegisterPage.module.scss';
 import operations from '../../redux/auth/operations';
 import LoginPage from '../LoginPage/LoginPage';
@@ -18,7 +18,6 @@ export default function RegisterPage() {
   const onRegister = user => {
     console.log('registered ' + user);
   };
-
   const handleChange = event => {
     const { value, name } = event.target;
     console.log(event.target.value);
@@ -30,17 +29,17 @@ export default function RegisterPage() {
         setLastName(value);
         return;
       case 'phone':
-        return;
+        setPhone(value);
+        break;
       case 'pass':
         setPass(value);
-        return;
+        break;
 
       default:
         console.warn('Проверьте пожалуйста input');
     }
     console.log(submitted);
   };
-
   const handleSubmit = evt => {
     evt.preventDefault();
     const user = {
@@ -54,7 +53,6 @@ export default function RegisterPage() {
     };
     console.log(user);
     dispatch(operations.register(user));
-
     setFirstName('');
     setLastName('');
     setPhone('');
@@ -62,70 +60,75 @@ export default function RegisterPage() {
   };
   return (
     <div className={styles.formjs}>
-      <div className={styles.header}>
-        <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
-      </div>
+
+      <header className={styles.header}>
+        {/* <NavLink to="/">
+          <button className={styles.btnGetback}>&#8592; Создать аккаунт</button>
+        </NavLink> */}
+        <NavLink to="/" className={styles.btnGetback}>
+          &#8592; Создать аккаунт
+        </NavLink>
+      </header>
+
       <form className={styles.form1} onSubmit={evt => handleSubmit(evt)}>
-        <div className="form-inputs">
-          <label htmlFor="username" className={styles.formLabel1}>
-            Имя*
-          </label>
-          <input
-            className={styles.formInput1}
-            value={firstName}
-            name="firstname"
-            type="text"
-            onChange={evt => handleChange(evt)}
-            placeholder="Введите ваше имя"
-            required
-          />
-        </div>
-        <div className="form-inputs">
-          <label htmlFor="lastname" className={styles.formlabel2}>
-            Фамилия*
-          </label>
-          <input
-            className={styles.input1}
-            value={lastName}
-            name="lastname"
-            type="text"
-            onChange={evt => handleChange(evt)}
-            placeholder="Введите вашу фамилию"
-            required
-          />
-        </div>
-        <div className="form-inputs">
-          <label htmlFor="phone" className={styles.formLabel1}>
-            Номер Телефона*
-          </label>
-          <input
-            className={styles.input1}
-            value={phone}
-            name="phone"
-            type="text"
-            onChange={evt => handleChange(evt)}
-            placeholder="Введите ваш номер "
-          />
-        </div>
-        <div className="form-inputs">
-          <label htmlFor="pass" className={styles.formlabel4}>
-            Пароль*
-          </label>
-          <input
-            className={styles.input1}
-            value={pass}
-            name="pass"
-            type="password"
-            onChange={evt => handleChange(evt)}
-            placeholder="Введите вашу фамилию"
-            required
-          />
-        </div>
+        <label htmlFor="username" className={styles.formLabel1}>
+          Имя*
+        </label>
+        <input
+          className={styles.formInput1}
+          value={firstName}
+          name="firstname"
+          type="text"
+          onChange={evt => handleChange(evt)}
+          placeholder="Введите ваше имя"
+          required
+        />
+
+        <label htmlFor="lastname" className={styles.formLabel1}>
+          Фамилия*
+        </label>
+        <input
+          className={styles.formInput1}
+          value={lastName}
+          name="lastname"
+          type="text"
+          onChange={evt => handleChange(evt)}
+          placeholder="Введите вашу фамилию"
+          required
+        />
+
+        <label htmlFor="phone" className={styles.formLabel1}>
+          Номер Телефона*
+        </label>
+        <input
+          className={styles.formInput1}
+          value={phone}
+          name="phone"
+          type="text"
+          onChange={evt => handleChange(evt)}
+          placeholder="Введите ваш номер "
+        />
+
+        <label htmlFor="pass" className={styles.formLabel1}>
+          Пароль*
+        </label>
+        <input
+          className={styles.formInput1}
+          value={pass}
+          name="pass"
+          type="password"
+          onChange={evt => handleChange(evt)}
+          placeholder="Введите вашу фамилию"
+          required
+        />
+      </form>
+
+      <footer className={styles.footer1}>
+      
         <button className={styles.btn1} type="submit">
           Дальше
         </button>
-      </form>
-      <div className={styles.footer1}></div>
+      </footer>
     </div>
   );
 }
