@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import selectors from '../redux/auth/selectors';
+import { isAuth } from '../redux/auth/selectors';
 
 const PublicRoute = ({
   isAuthenticated,
@@ -9,12 +9,13 @@ const PublicRoute = ({
   component: Component,
   ...routeProps
 }) => {
+  // console.log(routeProps);
   return (
     <Route
       {...routeProps}
       render={props =>
         isAuthenticated && restricted ? (
-          <Redirect to="/" />
+          <Redirect to="/user" />
         ) : (
           <Component {...props} />
         )
@@ -25,7 +26,7 @@ const PublicRoute = ({
 
 const mapStateToProps = store => {
   return {
-    isAuthenticated: selectors.isAuth(store),
+    isAuthenticated: isAuth(store),
   };
 };
 

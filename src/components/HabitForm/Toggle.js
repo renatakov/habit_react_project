@@ -1,3 +1,4 @@
+import classes from './Form.module.scss';
 import React, { Component } from 'react';
 
 class Toggle extends Component {
@@ -17,8 +18,8 @@ class Toggle extends Component {
   render() {
     return (
       <>
-        <h6>Напомнить</h6>
-        <button onClick={this.handleClick}>
+        {/* <label className={classes.remind}>Напомнить мне</label> */}
+        <button className={classes.on} onClick={this.handleClick}>
           {this.state.isToggleOn ? 'Включено' : 'Выключено'}
         </button>
       </>

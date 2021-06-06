@@ -1,15 +1,15 @@
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
+// habitUpdateRequest,
+// habitAddRequest,
+// habitDeleteRequest,
+// getAllHabitsRequest,
 import {
-  habitUpdateRequest,
   habitUpdateSuccess,
   habitUpdateError,
-  habitAddRequest,
   habitAddSuccess,
   habitAddError,
-  habitDeleteRequest,
   habitDeleteSuccess,
   habitDeleteError,
-  getAllHabitsRequest,
   getAllHabitsSuccess,
   getAllHabitsError,
 } from './actions';
@@ -23,16 +23,9 @@ const initState = {
 };
 
 const habit = createReducer(initState, {
-  [habitAddSuccess]: (_, action) => {
-    return action.payload;
-  },
-  [habitUpdateSuccess]: (_, action) => {
-    return action.payload;
-  },
-  [habitDeleteSuccess]: () => {
-    return initState;
-  },
-
+  [habitAddSuccess]: (_, action) => action.payload,
+  [habitUpdateSuccess]: (_, action) => action.payload,
+  [habitDeleteSuccess]: () => initState,
 });
 
 const habitsState = [];
@@ -50,7 +43,7 @@ const habitError = createReducer(null, {
   [habitUpdateError]: (_, action) => {
     return action.payload;
   },
-})
+});
 
 const allHabits = createReducer(habitsState, {
   [getAllHabitsSuccess]: (_, action) => {
@@ -61,18 +54,25 @@ const allHabits = createReducer(habitsState, {
   },
   [habitDeleteSuccess]: (habitsState, action) => {
     return habitsState.filter(habit => {
-      return habit.id !== action.payload
+      return habit.id !== action.payload;
     });
   },
   [habitUpdateSuccess]: (habitsState, action) => {
-    return habitsState.map((habit) => {
+    return habitsState.map(habit => {
       return habit.id === action.payload.id ? action.payload : habit;
-    })
-  }
+    });
+  },
+});
+
+const state = [];
+const habIts = createReducer(state, {
+  [getAllHabitsSuccess]: (_, { payload }) => payload,
+  [habitAddSuccess]: (state, { payload }) => [...state, payload],
 });
 
 export default combineReducers({
-  habit,
-  allHabits,
+  // habit,
+  // allHabits,
+  habIts,
   habitError,
 });

@@ -7,14 +7,22 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
+  background: url('../../images/mobile/bottom-lines.png');
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-position: bottom;
   @include for-size(tablet) {
+    background: url('../../images/tablet/back-widewave-bottom.png');
   }
   @include for-size(desktop) {
     background: url('../../images/desktop/leftwave.png');
     background-repeat: no-repeat;
     background-position-y: 100%;
     background-position: left;
+  }
+
+  @include for-size(desktop) {
+    // background: none;
   }
 }
 
@@ -167,24 +175,16 @@
 }
 
 .footer1 {
-  background: url('../../images/mobile/bottom-lines.png');
   // background-repeat: no-repeat;
   // background-position-y: 100%;
   // background-position: bottom;
-  height: 234px;
-  @include for-size(tablet) {
-    width: 100%;
-    padding: 50px;
-    // height: 100vh;
-    background: url('../../images/tablet/back-widewave-bottom.png');
-    // background-repeat: no-repeat;
-    // background-position-y: 100%;
-    // background-position: bottom;
-    height: 234px;
-  }
-  @include for-size(desktop) {
-    background: none;
-  }
+  // height: 234px;
+  // width: 100%;
+  // padding: 50px;
+  // height: 100vh;
+  // background-repeat: no-repeat;
+  // background-position-y: 100%;
+  // background-position: bottom;
 }
 
 .btn1 {
@@ -223,8 +223,8 @@
     padding: 22px 48px;
     position: relative;
     left: 40%;
-    
+
     transform: translate(-50%, 0);
-    margin-top: 30px
+    margin-top: 30px;
   }
 }

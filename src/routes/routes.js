@@ -33,14 +33,14 @@ export default [
     exact: true,
     key: uuid(),
     private: true,
-    restricted: false,
+    restricted: true,
   },
   {
     component: lazy(() => import('../pages/HabitsPage/HabitsPage')),
     path: '/habits',
     exact: true,
     key: uuid(),
-    private: false,
+    private: true,
     restricted: false,
   },
   {
@@ -48,7 +48,7 @@ export default [
     path: '/habitItem',
     exact: true,
     key: uuid(),
-    private: false,
+    private: true,
     restricted: true,
   },
 ];
