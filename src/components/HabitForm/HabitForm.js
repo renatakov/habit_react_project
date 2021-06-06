@@ -54,6 +54,7 @@ export default function From() {
     console.log(habit);
     // dispatch(addHabit(habit));
     setHabits(habits.push(habit));
+    
     localStorage.setItem('habit', JSON.stringify(habits));
     reset();
   };
