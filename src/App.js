@@ -9,6 +9,7 @@ function App() {
       <Suspense fallback="...">
         <Switch>
           {routes.map(item => {
+            // console.log(item);
             return item.private ? (
               <PrivateRoute {...item} />
             ) : (

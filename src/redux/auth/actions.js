@@ -11,3 +11,7 @@ export const loginError = createAction("LOGIN_ERROR");
 export const logoutRequest = createAction("LOGOUT_REQUEST");
 export const logoutSuccess = createAction("LOGOUT_SUCCESS");
 export const logoutError = createAction("LOGOUT_ERROR");
+
+export const updateUserRequest = createAction("UPDATE_USER_REQUEST");
+export const updateUserSuccess = createAction("UPDATE_USER_SUCCESS");
+export const updateUserError = createAction("UPDATE_USER_ERROR");

@@ -9,6 +9,9 @@ import {
   logoutRequest,
   logoutSuccess,
   logoutError,
+  updateUserRequest,
+  updateUserSuccess,
+  updateUserError,
 } from './actions';
 
 // !!! URL
@@ -23,11 +26,13 @@ const token = {
   },
 };
 
-const register = credentials => async dispatch => {
+export const register = credentials => async dispatch => {
+  console.log(credentials);
   dispatch(registerRequest());
   try {
     const response = await axios.post('/auth/register', credentials);
     const data = response.data;
+    console.log(data);
     token.set(data.token);
     dispatch(registerSuccess(data));
   } catch (error) {
@@ -35,7 +40,7 @@ const register = credentials => async dispatch => {
   }
 };
 
-const login = credentials => async dispatch => {
+export const login = credentials => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await axios.post('/auth/login', credentials);
@@ -47,7 +52,7 @@ const login = credentials => async dispatch => {
   }
 };
 
-const logout = () => async dispatch => {
+export const logout = () => async dispatch => {
   dispatch(logoutRequest());
   try {
     token.unset();
@@ -57,4 +62,15 @@ const logout = () => async dispatch => {
   }
 };
 
-export default { register, login, logout };
+export const updateUser = credentials => async dispatch => {
+  dispatch(updateUserRequest());
+  try {
+    const response = await axios.patch('./', credentials);
+    const data = response.data;
+    dispatch(updateUserSuccess(data));
+  } catch (error) {
+    dispatch(error.message);
+  }
+};
+
+// export default { register, login, logout };

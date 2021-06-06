@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import logo from '../../images/logo.svg';
 import styles from './LoginPage.module.scss';
 import { useDispatch } from 'react-redux';
-import operations from '../../redux/auth/operations';
+import { login } from '../../redux/auth/operations';
+import { NavLink } from 'react-router-dom';
 
 export default function LoginPage() {
   const [phone, setPhone] = useState('');
@@ -19,18 +21,26 @@ export default function LoginPage() {
 
   const handleSubmit = event => {
     event.preventDefault();
-
     setSubmitted(true);
-    dispatch(operations.login(phone));
+    dispatch(login(phone));
     setPhone('');
   };
 
   return (
-    <div className="loginjs">
-      <form className="form-2" onSubmit={handleSubmit}>
-        {submitted ? (
+    <div className={styles.loginjs}>
+      <NavLink to="/">
+        <button className={styles.btnGetback2}>&#8592; Войти</button>
+      </NavLink>
+      <div className={styles.header}>
+        <img src={logo} className="logo1" alt="logo" />
+      </div>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        {/* {submitted ? (
           <div className="success__message">You logged in !</div>
-        ) : null}
+        ) : null} */}
+        <label htmlFor="phone" className={styles.formLabel}>
+          Номер Телефона*
+        </label>
         <input
           className={styles.formInput}
           id="phone"
@@ -40,7 +50,13 @@ export default function LoginPage() {
           onChange={handlePhone}
           required
         />
+
+        <label htmlFor="password" className={styles.formLabel}>
+          Пароль*
+        </label>
         <input
+          className={styles.formInput}
+          id="password"
           value={pass}
           type="password"
           name="pass"
@@ -48,8 +64,11 @@ export default function LoginPage() {
           required
         />
 
-        {submitted && !phone ? <span>Пожалуйста введите ваш номер</span> : null}
-        <button className="button-1" type="submit">
+        {submitted && !phone ? (
+          <span className={styles.warning}>Пожалуйста введите ваш номер</span>
+        ) : null}
+
+        <button className={styles.btn2} type="submit">
           Дальше
         </button>
         <footer className="footer2"></footer>

@@ -15,20 +15,14 @@ export default class Modal extends Component {
   }
 
   handleClose = e => {
-
-
     const { toggleModal } = this.props;
-    console.log(toggleModal);
     if (e.target === e.currentTarget) {
       toggleModal();
     }
   };
 
   handleEsc = e => {
-    console.log(e);
-    console.log(e.code);
     const { toggleModal } = this.props;
-    console.log(toggleModal);
     if (e.code === 'Escape') {
       toggleModal();
     }

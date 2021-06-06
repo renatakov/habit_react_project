@@ -22,10 +22,10 @@ class UserPage extends Component {
       return;
     }
 
-    if(files[0].size > 2200000){
-      alert("Файл слишком большой!");
+    if (files[0].size > 2200000) {
+      alert('Файл слишком большой!');
       return;
-   };
+    }
 
     const file = files[0];
     const fileReader = new FileReader();

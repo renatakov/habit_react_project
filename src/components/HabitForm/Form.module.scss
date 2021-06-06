@@ -1,0 +1,250 @@
+.modal {
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  width: 100vw;
+}
+.formHeader {
+  margin-top: 10px;
+  background-color: #008e93;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 320px;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+.closeModal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Candara';
+  color: white;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.name {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #411c89;
+  font-family: 'Candara';
+  margin-bottom: 8px;
+}
+
+.input {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  font-family: 'Candara';
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  padding: 8px 20px;
+  font-weight: 300;
+  border-bottom: 1px solid white;
+}
+.input::placeholder {
+  color: white;
+  font-weight: bold;
+}
+.formBody {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  background: url('../../images/mobile/bottom-lines.png');
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-position: bottom;
+  height: 100%;
+}
+.formBody input,
+.formBody textarea,
+.formBody option,
+.formBody label {
+  border: none;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.formBody input::placeholder,
+.formBody textarea::placeholder {
+  color: #390093;
+  font-weight: bold;
+}
+.formBody textarea {
+  resize: none;
+}
+.formBody .label {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #411c89;
+  font-family: 'Source Sans Roman';
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.input1 {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #cbcbcb;
+  font-weight: 300;
+  font-family: 'Source Sans Roman';
+}
+
+.motiv {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #411c89;
+  font-family: 'Source Sans Roman';
+  padding-left: 20px;
+}
+
+.option {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #cccccc;
+  font-family: 'Candara';
+  border: none;
+}
+
+.color1 {
+  width: 17px;
+  height: 17px;
+  border-radius: 8px;
+  background-color: rgb(2, 192, 185);
+}
+
+.color2 {
+  width: 17px;
+  height: 17px;
+  border-radius: 8px;
+  background-color: #c0024a;
+}
+
+.color3 {
+  width: 17px;
+  height: 17px;
+  border-radius: 8px;
+  background-color: #390093;
+}
+
+.remind {
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #411c89;
+  font-family: 'Source Sans Roman';
+  padding-left: 20px;
+}
+
+.save {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #411c89;
+  font-weight: bold;
+  font-family: 'Candara';
+  //   position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+// .line {
+//   display: block;
+//   position: relative;
+// }
+
+// .line1 {
+//   display: block;
+//   width: 100%;
+//   position: absolute;
+//   top: 62%;
+//   left: -10%;
+// }
+
+// .line2 {
+//   display: block;
+//   width: 100%;
+//   position: absolute;
+//   top: 62%;
+//   left: -10%;
+// }
+
+.on {
+  border: none;
+  border-radius: 6px;
+  background-color: #764abb;
+  padding: 2px 14px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}

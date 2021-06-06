@@ -1,19 +1,20 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
+
 .loginjs {
   height: 100vh;
-  background: url('../../images/mobile/bottom-lines.png');
+  background-image: url('../../images/mobile/bottom-lines.png');
   background-repeat: no-repeat;
   background-position-y: 100%;
   background-position: bottom;
   @include for-size(tablet) {
-    background: url('../../images/tablet/bottom-lines.png');
+    background-image: url('../../images/tablet/bottom-lines.png');
     background-repeat: no-repeat;
     background-position-y: 100%;
     background-position: bottom;
   }
   @include for-size(desktop) {
-    background: url('');
+    background: url('../../images/desktop/bottomwaves-desk.png');
     background-repeat: no-repeat;
     background-position-y: 100%;
     background-position: bottom;
@@ -63,14 +64,17 @@
     }
   }
   .form {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
     .formLabel {
       font-size: 20px;
       letter-spacing: 1px;
       color: $blue-color;
       font-weight: bold;
       font-family: 'Candara';
-      margin-bottom: 30px;
       display: block;
+      margin: 30px;
       @include for-size(tablet) {
         font-size: 30px;
         letter-spacing: 1px;
@@ -79,11 +83,10 @@
         font-family: 'Candara';
       }
       @include for-size(desktop) {
-      
       }
     }
     .formInput {
-      margin-bottom: 42px;
+      // padding-bottom: 42px;
       border: none;
       border-bottom: 1px solid black;
       padding: 8px;
@@ -99,7 +102,7 @@
     }
     .btn2 {
       display: block;
-      margin: 0 auto;
+      margin: 20px auto;
       background-color: rgba(234, 231, 242, 0.5019607843137255);
       font-size: 20px;
       letter-spacing: 1px;
@@ -120,6 +123,8 @@
       font-family: 'Candara';
       padding: 15px 41px;
     }
-    
   }
+}
+.warning {
+  display: block;
 }

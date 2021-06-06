@@ -5,14 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import 'modern-normalize/modern-normalize.css';
 import './styles/_shared.scss';
 import { Provider } from 'react-redux';
-import s from './redux/store';
-const { store } = s;
+import { store, persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+// const { store } = s;
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PersistGate persistor={persistor} loading={null}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById('root'),
 );
