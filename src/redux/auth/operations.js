@@ -23,9 +23,9 @@ const token = {
   },
 };
 
-const register = credentials => async dispatch => {
+export const register = credentials => async dispatch => {
   dispatch(registerRequest());
-  console.log(credentials)
+  console.log(credentials);
   try {
     const response = axios.post('/auth/register', credentials);
     const data = response.data;
@@ -36,7 +36,7 @@ const register = credentials => async dispatch => {
   }
 };
 
-const login = credentials => async dispatch => {
+export const login = credentials => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = axios.post('/auth/login', credentials);
@@ -48,7 +48,7 @@ const login = credentials => async dispatch => {
   }
 };
 
-const logout = () => async dispatch => {
+export const logout = () => async dispatch => {
   dispatch(logoutRequest());
   try {
     token.unset();
@@ -57,5 +57,3 @@ const logout = () => async dispatch => {
     dispatch(logoutError(error.message));
   }
 };
-
-export default { register, login, logout };
